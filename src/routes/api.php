@@ -7,3 +7,8 @@ Route::get('/', function () {
         'message' => 'Welcome to Micro Service Boilerplate!'
     ]);
 });
+
+Route::group(['prefix' => 'api'], function () {
+    Route::post('/register', 'UserController@store');
+    Route::post('/login', 'LoginController@login');
+});
